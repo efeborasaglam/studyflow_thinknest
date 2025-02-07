@@ -1,0 +1,99 @@
+.completed-event {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.flames-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;  /* Sicherstellen, dass die Flammen immer oben angezeigt werden */
+}
+
+.flame {
+  position: absolute;
+  bottom: 0;
+  font-size: 50px; /* Größe des Flammen-Emojis */
+  animation: flameFly 3s ease-in-out forwards;
+  opacity: 0.8;
+  transform-origin: center;
+  z-index: 9999;
+  color: orange; /* Farbe des Emoji, um es feurig wirken zu lassen */
+}
+
+.flame-1 { left: 10%; animation-delay: 0s; }
+.flame-2 { left: 20%; animation-delay: 0.3s; }
+.flame-3 { left: 30%; animation-delay: 0.6s; }
+.flame-4 { left: 40%; animation-delay: 0.9s; }
+.flame-6 { left: 50%; animation-delay: 0s; }
+.flame-7 { left: 60%; animation-delay: 0.3s; }
+.flame-8 { left: 70%; animation-delay: 0.6s; }
+.flame-9 { left: 80%; animation-delay: 0.9s; }
+.flame-10 { left: 90%; animation-delay: 0.9s; }
+
+@keyframes flameFly {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-150px) scale(1.2) rotate(10deg);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(-300px) scale(0.5) rotate(45deg);
+    opacity: 0;
+  }
+}
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.card.dark-mode {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+.fullcalendar.dark-mode {
+  --fc-bg-color: #121212;
+  --fc-neutral-bg-color: #1e1e1e;
+  --fc-border-color: #333;
+  --fc-text-color: #e0e0e0;
+  --fc-event-bg-color: #333;
+  --fc-event-text-color: #e0e0e0;
+  --fc-today-bg-color: rgba(255, 255, 255, 0.1);
+}
+
+button.dark-mode {
+  background-color: #333;
+  color: #e0e0e0;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #121212; /* Dunkler Hintergrund */
+  color: #ffffff; /* Helle Schriftfarbe */
+}
+
+.dark-mode .card {
+  background-color: #1e1e1e; /* Dunkler Hintergrund für Karten */
+  color: #ffffff; /* Helle Schriftfarbe für Karten */
+}
+
+.dark-mode .btn {
+  background-color: #444; /* Dunkler Button-Hintergrund */
+  color: #ffffff; /* Helle Schriftfarbe für Buttons */
+  border-color: #555; /* Button-Rahmen */
+}
+
+/* Standard-Stil */
+body {
+  background-color: #ffffff; /* Standard weißer Hintergrund */
+  color: #000000; /* Standard schwarze Schrift */
+  transition: background-color 0.3s, color 0.3s; /* Sanfter Übergang */
+}
